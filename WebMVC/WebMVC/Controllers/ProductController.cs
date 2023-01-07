@@ -21,7 +21,7 @@ namespace WebMVC.Controllers
             new ProductViewModel(1, "Kapal", "Transportasi", 12000),
             new ProductViewModel(2, "Naga", "Hewan", 6000),
             new ProductViewModel(3, "Mie", "Makanan", 8000),
-            new ProductViewModel(3, "Bensin", "Bahan Bakar", 10000),
+            new ProductViewModel(4, "Bensin", "Bahan Bakar", 10000),
         };
 
 
@@ -91,7 +91,7 @@ namespace WebMVC.Controllers
             // 2. remove from list
             _productViewModels.Remove(product);
             
-            return Redirect("List");
+            return Redirect("/Product/List");
         }
         
     }
