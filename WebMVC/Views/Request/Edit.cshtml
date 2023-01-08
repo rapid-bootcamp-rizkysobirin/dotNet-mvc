@@ -1,0 +1,42 @@
+@model RequestViewModel
+@{
+    ViewData["Title"] = "Request Edit Data";
+}
+
+<h2>Form Edit Product</h2>
+
+<form asp-action="Update" method="post">
+    <div class="form-group">
+        <label asp-for="Id">Asset ID</label>
+        <input asp-for="Id" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="IdAsset">Asset ID</label>
+        <input asp-for="IdAsset" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PicId">PIC ID</label>
+        <input asp-for="PicId" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SpecificationReq">Specification Request</label>
+        <input asp-for="SpecificationReq" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Necessary">Necessary</label>
+        <input asp-for="Necessary" class="form-control">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button asp-action="List" class="btn btn-sm btn-success">Back</button>
+    </div>
+    
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -34,9 +34,9 @@ namespace WebMVC.Controllers
         [HttpPost]
         public IActionResult Save([Bind("Id, Name, Specification, SerialNumber, PurchaseYear")] AssetViewModel asset)
         {
-            Console.WriteLine(asset);
+            // Console.WriteLine(asset);
             _assetViewModels.Add(asset);
-            Console.WriteLine(asset);
+            // Console.WriteLine(asset);
             return Redirect("List");
         }
 

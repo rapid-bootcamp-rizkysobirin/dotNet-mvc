@@ -1,0 +1,39 @@
+@model RequestViewModel
+@{
+    ViewData["Title"] = "Add Request";
+}
+
+<h2>Form Add Request</h2>
+
+<form asp-action="Save" method="post">
+    <div class="form-group">
+        <label asp-for="Id">Request Id</label>
+        <input asp-for="Id" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="IdAsset">Asset Id</label>
+        <input asp-for="IdAsset" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PicId">PIC Id</label>
+        <input asp-for="PicId" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SpecificationReq">Specification Request</label>
+        <input asp-for="SpecificationReq" class="form-control">
+    </div>
+    
+    <div class="form-group">
+            <label asp-for="Necessary">Necessary</label>
+            <input asp-for="Necessary" class="form-control">
+        </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
