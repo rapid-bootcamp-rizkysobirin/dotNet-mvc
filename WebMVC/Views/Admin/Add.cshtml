@@ -1,0 +1,39 @@
+@model AdminViewModel
+@{
+    ViewData["Title"] = "Add Admin";
+}
+
+<h2>Form Add Admin</h2>
+
+<form asp-action="Save" method="post">
+    <div class="form-group">
+        <label asp-for="Id">ID</label>
+        <input asp-for="Id" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Name">Admin Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Role">Role Code</label>
+        <input asp-for="Role" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control">
+    </div>
+    
+    <div class="form-group">
+            <label asp-for="IdAudit">Audit Idr</label>
+            <input asp-for="IdAudit" class="form-control">
+        </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
