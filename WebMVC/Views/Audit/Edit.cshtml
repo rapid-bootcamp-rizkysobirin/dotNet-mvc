@@ -1,11 +1,11 @@
 @model AuditViewModel
 @{
-    ViewData["Title"] = "Asset Edit Data";
+    ViewData["Title"] = "Audit Edit Data";
 }
 
-<h2>Form Edit Product</h2>
+<h2>Form Edit Audit</h2>
 
-<form asp-action="" method="post">
+<form asp-action="Update" method="post">
     <div class="form-group">
         <label asp-for="Id">Id</label>
         <input asp-for="Id" class="form-control">
@@ -15,21 +15,18 @@
         <label asp-for="IdAsset">Asset Id</label>
         <input asp-for="IdAsset" class="form-control">
     </div>
-
-    <div class="form-group">
-        <label asp-for="AntiVirus">Anti Virus</label>
-        <input asp-for="AntiVirus" class="form-control">
-    </div>
-
-    <div class="form-group">
-        <label asp-for="WindowsLicense">Windows License</label>
-        <input asp-for="WindowsLicense" class="form-control">
-    </div>
-    
-    <div class="form-group">
-        <label asp-for="OfficeLicense">Office License</label>
-        <input asp-for="OfficeLicense" class="form-control">
-    </div>
+    <div class="form-group custom-control custom-checkbox">
+            <input asp-for="AntiVirus" type="checkbox" class="custom-control-input" id="customCheck1">
+            <label asp-for="AntiVirus" class="custom-control-label" for="customCheck1">Licensed Antivirus</label>
+        </div>
+        <div class="form-group custom-control custom-checkbox">
+            <input asp-for="OfficeLicense" type="checkbox" class="custom-control-input" id="customCheck1">
+            <label asp-for="OfficeLicense" class="custom-control-label" for="customCheck1">Licensed Office</label>
+        </div>
+        <div class="form-group custom-control custom-checkbox">
+            <input asp-for="WindowsLicense" type="checkbox" class="custom-control-input" id="customCheck1">
+            <label asp-for="WindowsLicense" class="custom-control-label" for="customCheck1">Licensed Windows</label>
+        </div>
     <div class="form-group">
         <label asp-for="Condition">Condition</label>
         <input asp-for="Condition" class="form-control">

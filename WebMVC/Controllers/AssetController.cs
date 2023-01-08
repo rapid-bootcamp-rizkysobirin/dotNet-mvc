@@ -37,14 +37,14 @@ namespace WebMVC.Controllers
             Console.WriteLine(asset);
             _assetViewModels.Add(asset);
             Console.WriteLine(asset);
-            return Redirect("Assets");
+            return Redirect("List");
         }
 
         public IActionResult Delete(int? id)
         {
             AssetViewModel asset = _assetViewModels.Find(x => x.Id.Equals(id));
             _assetViewModels.Remove(asset);
-            return Redirect("/Asset/Assets");
+            return Redirect("/Asset/List");
         }
 
         public IActionResult Details(int id)
@@ -68,10 +68,10 @@ namespace WebMVC.Controllers
             [Bind("Id, Name, Specification, SerialNumber, PurchaseYear")]
             AssetViewModel asset)
         {
-            AssetViewModel assetOld = _assetViewModels.Find(a => a.Id.Equals(id));
-            _assetViewModels.Remove(assetOld);
+            AssetViewModel assetOPre = _assetViewModels.Find(a => a.Id.Equals(id));
+            _assetViewModels.Remove(assetOPre);
             _assetViewModels.Add(asset);
-            return Redirect("Assets");
+            return Redirect("List");
         }
 
     }

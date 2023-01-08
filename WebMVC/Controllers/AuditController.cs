@@ -45,31 +45,31 @@ namespace WebMVC.Controllers
             return Redirect("/Audit/List");
         }
 
-        // public IActionResult Details(int id)
-        // {
-        //     AuditViewModel audit = (
-        //         from a in _auditViewModels
-        //         where a.Id.Equals(id)
-        //         select a
-        //     ).SingleOrDefault(new AuditViewModel());
-        //     return View(audit);
-        // }
-        //
-        // public IActionResult Edit(int? id) // ini tampilan edit
-        // {
-        //     AuditViewModel audit = _auditViewModels.Find(a => a.Id.Equals(id));
-        //     return View(audit);
-        // }
-        //
-        // [HttpPost]
-        // public IActionResult Update(int id,
-        //     [Bind("Id, IdAsset, AntiVirus, WindowsLicense, OfficeLicense, Condition, Validation")]
-        //     AuditViewModel audit)
-        // {
-        //     AuditViewModel audit0 = _auditViewModels.Find(a => a.Id.Equals(id));
-        //     _auditViewModels.Remove(audit0);
-        //     _auditViewModels.Add(audit);
-        //     return Redirect("List");
-        // }
+        public IActionResult Details(int id)
+        {
+            AuditViewModel audit = (
+                from a in _auditViewModels
+                where a.Id.Equals(id)
+                select a
+            ).SingleOrDefault(new AuditViewModel());
+            return View(audit);
+        }
+        
+        public IActionResult Edit(int? id) // ini tampilan edit
+        {
+            AuditViewModel audit = _auditViewModels.Find(a => a.Id.Equals(id));
+            return View(audit);
+        }
+        
+        [HttpPost]
+        public IActionResult Update(int id,
+            [Bind("Id, IdAsset, AntiVirus, WindowsLicense, OfficeLicense, Condition, Validation")]
+            AuditViewModel audit)
+        {
+            AuditViewModel audit0 = _auditViewModels.Find(a => a.Id.Equals(id));
+            _auditViewModels.Remove(audit0);
+            _auditViewModels.Add(audit);
+            return Redirect("List");
+        }
     }
 }
