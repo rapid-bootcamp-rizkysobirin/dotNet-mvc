@@ -1,11 +1,11 @@
 @model AssetViewModel
 @{
-    ViewData["Title"] = "Add Asset";
+    ViewData["Title"] = "Asset Edit Data";
 }
 
-<h2>Form Add Asset</h2>
+<h2>Form Edit Product</h2>
 
-<form asp-action="Save" method="post">
+<form asp-action="Update" method="post">
     <div class="form-group">
         <label asp-for="Id">Asset Id</label>
         <input asp-for="Id" class="form-control">
@@ -17,21 +17,24 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Specification">Asset Specification</label>
+        <label asp-for="Specification">Asset Specificatio</label>
         <input asp-for="Specification" class="form-control">
     </div>
 
     <div class="form-group">
-        <label asp-for="SerialNumber">Aset Serial Number</label>
+        <label asp-for="SerialNumber">Asset Serial Number</label>
         <input asp-for="SerialNumber" class="form-control">
     </div>
     
     <div class="form-group">
-            <label asp-for="PurchaseYear">Purchase Year</label>
-            <input asp-for="PurchaseYear" class="form-control">
-        </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+            <label asp-for="PurchaseYear">Asset Purchase Year</label>
+        <input asp-for="PurchaseYear" class="form-control">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button asp-action="Assets" class="btn btn-sm btn-success">Back</button>
+    </div>
+    
 </form>
 
 @section Scripts {
