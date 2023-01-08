@@ -3,7 +3,6 @@ using WebMVC.Models;
 
 namespace WebMVC.Controllers
 {
-
     public class AdminController : Controller
     {
         // GET
@@ -11,7 +10,6 @@ namespace WebMVC.Controllers
         // {
         //     return View();
         // }
-
         private static List<AdminViewModel> _adminViewModels = new List<AdminViewModel>()
         {
             new AdminViewModel(1, "Joko", 3, "Jok@mail.id", 6),
@@ -53,6 +51,21 @@ namespace WebMVC.Controllers
             AdminViewModel admin = _adminViewModels.Find(a => a.Id.Equals(id));
             _adminViewModels.Remove(admin);
             return Redirect("/Admin/List");
+        }
+
+        public IActionResult Edit(int? id)
+        {
+            AdminViewModel admin = _adminViewModels.Find(a => a.Id.Equals(id));
+            return View(admin);
+        }
+
+        [HttpPost]
+        public IActionResult Update(int id, [Bind("Id, Name, Role, Email, IdAudit")] AdminViewModel admin)
+        {
+            AdminViewModel adminPre = _adminViewModels.Find(a => a.Id.Equals(id));
+            _adminViewModels.Remove(adminPre);
+            _adminViewModels.Add(admin);
+            return Redirect("List");
         }
     }
 }

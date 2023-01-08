@@ -1,10 +1,10 @@
-@model AssetViewModel
+@model AdminViewModel
 
 @{
-    ViewData["Title"] = "Asset Details";
+    ViewData["Title"] = "Admin Details";
 }
 
-<h2>Product Detail</h2>
+<h2>Admin Detail</h2>
 <table class="table tab-content">
     <tbody>
     <tr>
@@ -12,21 +12,21 @@
         <td>@Model.Id</td>
     </tr>
     <tr>
-        <th>Asset Name</th>
+        <th>Admin Name</th>
         <td>@Model.Name</td>
     </tr>
     
     <tr>
-        <th>Asset Specificatio</th>
-        <td>@Model.Specification</td>
+        <th>Email</th>
+        <td>@Model.Email</td>
     </tr>
     <tr>
-        <th>Asset Serial Number</th>s
-        <td>@Model.SerialNumber</td>
+        <th>Role Code</th>s
+        <td>@Model.Role</td>
     </tr>
     <tr>
-        <th>Asset Purchase Year</th>
-        <td>@Model.PurchaseYear</td>
+        <th>Audit ID</th>
+        <td>@Model.IdAudit</td>
     </tr>
     </tbody>
 </table>

@@ -1,34 +1,34 @@
-@model AssetViewModel
+@model AdminViewModel
 @{
-    ViewData["Title"] = "Asset Edit Data";
+    ViewData["Title"] = "Admin Edit Data";
 }
 
-<h2>Form Edit Product</h2>
+<h2>Admin Edit Product</h2>
 
 <form asp-action="Update" method="post">
     <div class="form-group">
-        <label asp-for="Id">Asset Id</label>
+        <label asp-for="Id">Id</label>
         <input asp-for="Id" class="form-control">
     </div>
     
     <div class="form-group">
-        <label asp-for="Name">Asset Name</label>
+        <label asp-for="Name">Admin Name</label>
         <input asp-for="Name" class="form-control">
     </div>
 
     <div class="form-group">
-        <label asp-for="Specification">Asset Specificatio</label>
-        <input asp-for="Specification" class="form-control">
+        <label asp-for="Role">Role Code</label>
+        <input asp-for="Role" class="form-control">
     </div>
 
     <div class="form-group">
-        <label asp-for="SerialNumber">Asset Serial Number</label>
-        <input asp-for="SerialNumber" class="form-control">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control">
     </div>
     
     <div class="form-group">
-            <label asp-for="PurchaseYear">Asset Purchase Year</label>
-        <input asp-for="PurchaseYear" class="form-control">
+            <label asp-for="IdAudit">Id Audit</label>
+        <input asp-for="IdAudit" class="form-control">
     </div>
     <div>
         <button type="submit" class="btn btn-primary">Update</button>
