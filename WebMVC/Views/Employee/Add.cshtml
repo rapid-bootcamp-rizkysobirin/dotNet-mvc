@@ -1,0 +1,43 @@
+@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Add Employee";
+}
+
+<h2>Form Add Asset</h2>
+
+<form asp-action="Save" method="post">
+    <div class="form-group">
+        <label asp-for="Id">Employee Id</label>
+        <input asp-for="Id" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Name">Employee Name</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Position">Position</label>
+        <input asp-for="Position" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Emailr</label>
+        <input asp-for="Email" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Number">No. Phone</label>
+        <input type="number" asp-for="Number" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Address">Address</label>
+        <input asp-for="Address" class="form-control">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

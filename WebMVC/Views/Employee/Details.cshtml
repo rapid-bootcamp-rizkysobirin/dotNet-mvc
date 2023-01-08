@@ -1,0 +1,36 @@
+@model EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h2>Employee Detail</h2>
+<table class="table tab-content">
+    <tbody>
+    <tr>
+        <th>Employee Id</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Employee Name</th>
+        <td>@Model.Name</td>
+    </tr>
+    
+    <tr>
+        <th>Position</th>
+        <td>@Model.Position</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>No.Phone</th>
+        <td>@Model.Number</td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td>@Model.Address</td>
+    </tr>
+    </tbody>
+</table>
