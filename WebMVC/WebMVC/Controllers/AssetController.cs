@@ -59,9 +59,6 @@ namespace WebMVC.Controllers
 
         public IActionResult Edit(int? id) // ini tampilan edit
         {
-            // AssetViewModel asset = _assetViewModels.Find(a => a.Id.Equals(id));
-            // return View(asset);
-
             AssetViewModel asset = _assetViewModels.Find(a => a.Id.Equals(id));
             return View(asset);
         }
